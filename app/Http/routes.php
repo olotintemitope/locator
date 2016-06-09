@@ -14,3 +14,17 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->group(['prefix' => '/api/v1'], function() use ($app) {
+    $app->get('/countries', function() {
+        return 'Return list of countries in the world as a JSON response';
+    });
+
+    $app->get('/states/{countryName}', function() {
+        return 'Return list of states under a country as a JSON response';
+    });
+
+    $app->get('/counties/{stateName}', function() {
+        return 'Return list of Local Governemt under a state as a JSON response';
+    });
+});
