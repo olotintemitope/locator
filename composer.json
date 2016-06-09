@@ -1,5 +1,5 @@
 {
-    "name": "laravel/lumen",
+    "name": "claz/locationapi",
     "description": "The Laravel Lumen Framework.",
     "keywords": ["framework", "laravel", "lumen"],
     "license": "MIT",
