@@ -11,14 +11,8 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->version();
-});
-
 $app->group(['prefix' => '/api/v1'], function() use ($app) {
-    $app->get('/countries', function() {
-        return 'Return list of countries in the world as a JSON response';
-    });
+    $app->get('/countries', 'App\Http\Controllers\LocationAPIController@getCountries');
 
     $app->get('/states/{countryName}', function() {
         return 'Return list of states under a country as a JSON response';
