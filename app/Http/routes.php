@@ -14,9 +14,7 @@
 $app->group(['prefix' => '/api/v1'], function() use ($app) {
     $app->get('/countries', 'App\Http\Controllers\LocationAPIController@getCountries');
 
-    $app->get('/states/{countryName}', function() {
-        return 'Return list of states under a country as a JSON response';
-    });
+    $app->get('/states/{countryName}', 'App\Http\Controllers\LocationAPIController@getStates');
 
     $app->get('/counties/{stateName}', function() {
         return 'Return list of Local Governemt under a state as a JSON response';
