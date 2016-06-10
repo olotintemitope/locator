@@ -11,26 +11,44 @@ class LocationAPIController extends Controller
 	 */
 	protected $client;
 
+	const API_URL = 'http://where.yahooapis.com/v1/';
+
+	const API_ATT = '?format=json&appid=';
+
 	/**
-	 * Create an instrance on Guzzle
+	 * Create an instance of Guzzle
 	 */
 	public function __construct(GuzzleClient $client)
 	{
 		$this->client = $client;
+
 	}
 
 	public function getCountries()
 	{
-		$res = $this->client->request('GET', 'http://where.yahooapis.com/v1/countries?format=json&appid=' . env('YAHOO_CLIENT_ID'));
+		$res = $this->getter('countries');
 
-		return json_decode( $res->getBody(), true );
+		return $this->respondJSON($res);
 	}
 
 	public function getStates($countryName)
 	{
+		$res = $this->getter('states/' . $countryName);
+
+		return $this->respondJSON($res);
 	}
 
 	public function getCounties($stateName)
 	{
+	}
+
+	private function getter ($string)
+	{
+		return $this->client->request('GET', self::API_URL . $string . self::API_ATT . env('YAHOO_CLIENT_ID'));
+	}
+
+	private function respondJSON($res)
+	{
+		return json_decode( $res->getBody(), true );
 	}
 }
