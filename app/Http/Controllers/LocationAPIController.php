@@ -42,11 +42,21 @@ class LocationAPIController extends Controller
 	{
 	}
 
+	/**
+	 * Make a request with Guzzle Client
+	 *
+	 * @return Guzzle response
+	 */
 	private function getter ($string)
 	{
 		return $this->client->request('GET', self::API_URL . $string . self::API_ATT . env('YAHOO_CLIENT_ID'));
 	}
 
+	/**
+	 * Respond with Json response.
+	 *
+	 * @return json
+	 */
 	private function respondJSON($res)
 	{
 		return json_decode( $res->getBody(), true );
