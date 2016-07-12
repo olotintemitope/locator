@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Country;
 use GuzzleHttp\Client as GuzzleClient;
 
 class LocationAPIController extends Controller
@@ -15,6 +16,8 @@ class LocationAPIController extends Controller
 
 	const API_ATT = '?format=json&appid=';
 
+	private $countries = [];
+
 	/**
 	 * Create an instance of Guzzle
 	 */
@@ -26,9 +29,11 @@ class LocationAPIController extends Controller
 
 	public function getCountries()
 	{
-		$res = $this->getter('countries');
+		$data = $this->respondJSON($this->getter('countries'))['places']['place'];
 
-		return $this->respondJSON($res);
+		return collect(array_map( function ($countryData) {
+			return new Country($countryData);
+		}, $data));
 	}
 
 	public function getStates($countryName)
