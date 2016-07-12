@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Controllers;
 
-use App\Country;
+use App\Model\Country;
 use GuzzleHttp\Client as GuzzleClient;
 
-class LocationAPIController extends Controller
+class LocationAPIController
 {
 	/**
 	 * The GuzzleClient instance to-be.
