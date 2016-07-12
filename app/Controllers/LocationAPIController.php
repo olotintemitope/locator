@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Model\Country;
+use App\Model\State;
 use Dotenv\Dotenv as Dotenv;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -43,9 +44,11 @@ class LocationAPIController
 
 	public function getStates($countryName)
 	{
-		$res = $this->getter('states/' . $countryName);
+		$data = $this->respondJSON( $this->getter('states/' . $countryName) )['places']['place'];
 
-		return $this->respondJSON($res);
+		return collect(array_map( function ($data) {
+			return new State($data);
+		}, $data));
 	}
 
 	public function getCounties($stateName)
