@@ -1,10 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Country extends Model
+class Country
 {
     /**
      * The id of the country.

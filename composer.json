@@ -8,6 +8,7 @@
         "php": ">=5.5.9",
         "vlucas/phpdotenv": "~2.2",
         "guzzlehttp/guzzle": "^6.2",
+        "vlucas/phpdotenv": "^2.2",
         "illuminate/support": "^5.2"
     },
     "require-dev": {
@@ -20,8 +21,7 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/",
-            "database/"
+            "tests/"
         ]
     }
 }
