@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model;
+namespace Wishi\Model;
 
 class Location
 {

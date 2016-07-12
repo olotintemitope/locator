@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Controllers;
+namespace Wishi\Controllers;
 
-use App\Model\County;
-use App\Model\Country;
-use App\Model\State;
+use Wishi\Model\County;
+use Wishi\Model\Country;
+use Wishi\Model\State;
 use Dotenv\Dotenv as Dotenv;
 use GuzzleHttp\Client as GuzzleClient;
 
-class LocationAPIController
+class Locator
 {
 	/**
 	 * The GuzzleClient instance to-be.
@@ -19,8 +19,6 @@ class LocationAPIController
 	const API_URL = 'http://where.yahooapis.com/v1/';
 
 	const API_ATT = '?format=json&appid=';
-
-	private $countries = [];
 
 	/**
 	 * Create an instance of Guzzle

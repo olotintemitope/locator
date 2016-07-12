@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace Wishi\Model;
 
-use App\Model\Location;
+use Wishi\Model\Location;
 
 class Country extends Location
 {   
