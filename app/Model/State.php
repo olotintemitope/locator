@@ -4,6 +4,7 @@ namespace App\Model;
 
 use App\Model\Location;
 
-class Country extends Location
-{   
+class State extends Location
+{
+    
 }
