@@ -1,5 +1,5 @@
 {
-    "name": "claz/locationapi",
+    "name": "claz/wishi",
     "description": "The Laravel Lumen Framework.",
     "keywords": ["framework", "laravel", "lumen"],
     "license": "MIT",
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "Wishi\\": "src/"
         }
     },
     "autoload-dev": {
