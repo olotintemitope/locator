@@ -14,7 +14,6 @@ class Locator
 	 * The GuzzleClient instance to-be.
 	 */
 	protected $client;
-	protected $dotenv;
 
 	const API_URL = 'http://where.yahooapis.com/v1/';
 
@@ -27,9 +26,7 @@ class Locator
 	{
 		$this->client = $client;
 
-		$this->dotenv = $dotenv;
 		$dotenv->load();
-
 	}
 
 	public function getCountries()
