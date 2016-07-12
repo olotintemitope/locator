@@ -45,6 +45,7 @@ class LocationAPIController extends Controller
 
 	public function getCounties($stateName)
 	{
+
 	}
 
 	/**
