@@ -6,4 +6,5 @@ use App\Model\Location;
 
 class Country extends Location
 {   
+    
 }

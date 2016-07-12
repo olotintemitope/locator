@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Model\County;
 use App\Model\Country;
 use App\Model\State;
 use Dotenv\Dotenv as Dotenv;
@@ -44,16 +45,31 @@ class LocationAPIController
 
 	public function getStates($countryName)
 	{
-		$data = $this->respondJSON( $this->getter('states/' . $countryName) )['places']['place'];
+		$data = $this->respondJSON( $this->getter('states/' . $countryName));
+
+		$places = $data['places']['place'];
 
 		return collect(array_map( function ($data) {
 			return new State($data);
-		}, $data));
+		}, $places));
 	}
 
+	/**
+	 * This method gets all counties under a state.
+	 *
+	 * @param $stateName
+	 *
+	 * @return collection
+	 */
 	public function getCounties($stateName)
 	{
+		$data = $this->respondJSON($this->getter('counties/'.$stateName));
 
+		$places = $data['places']['place'];
+
+		return collect(array_map(function ($county) {
+			return new County($county);
+		}, $places));
 	}
 
 	/**
