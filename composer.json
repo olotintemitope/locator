@@ -1,6 +1,6 @@
 {
     "name": "claz/wishi",
-    "description": "Aa antagonistic package to get different countries, states and counties.",
+    "description": "An agnostic package to get different countries, states and counties.",
     "keywords": ["framework", "PHP", "laravel"],
     "license": "MIT",
     "type": "project",
