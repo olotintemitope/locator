@@ -24,10 +24,10 @@ class Country
 
     public function __construct(array $countryData)
     {
-        $this->id = $countryData['woeid'];
+        $this->id   = $countryData['woeid'];
 
         $this->name = $countryData['name'];
 
-        $this->uri = $countryData['uri'];
+        $this->uri  = $countryData['uri'];
     }
 }
