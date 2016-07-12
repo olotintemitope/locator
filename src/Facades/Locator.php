@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
 *
 */
-class Locator extends Facades
+class Locator extends Facade
 {
 	/**
 	 * Get the registered name of the component.
