@@ -1,6 +1,6 @@
 <?php
 
-namespace Wishi\ServiceProvider;
+namespace Wishi\Providers;
 
 use Dotenv\Dotenv as Dotenv;
 use Wishi\Controllers\Locator;
@@ -23,9 +23,13 @@ class LocatorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('locator', function (GuzzleClient $client, Dotenv $dotenv) {
-            return new Locator($client, $dotenv);
-        });
+        $this->app->singleton('locator', function ($app) {
+            $client = new GuzzleClient;
+            $dotenv = new Dotenv(__DIR__ . '/../../../../../');
+           
+           return new Locator($client, $dotenv);
+
+       });
     }
 
     /**
