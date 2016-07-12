@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Model\Country;
+use Dotenv\Dotenv as Dotenv;
 use GuzzleHttp\Client as GuzzleClient;
 
 class LocationAPIController
@@ -11,6 +12,7 @@ class LocationAPIController
 	 * The GuzzleClient instance to-be.
 	 */
 	protected $client;
+	protected $dotenv;
 
 	const API_URL = 'http://where.yahooapis.com/v1/';
 
@@ -21,9 +23,12 @@ class LocationAPIController
 	/**
 	 * Create an instance of Guzzle
 	 */
-	public function __construct(GuzzleClient $client)
+	public function __construct(GuzzleClient $client, Dotenv $dotenv)
 	{
 		$this->client = $client;
+
+		$this->dotenv = $dotenv;
+		$dotenv->load();
 
 	}
 
@@ -55,7 +60,7 @@ class LocationAPIController
 	 */
 	private function getter ($string)
 	{
-		return $this->client->request('GET', self::API_URL . $string . self::API_ATT . env('YAHOO_CLIENT_ID'));
+		return $this->client->request('GET', self::API_URL . $string . self::API_ATT . getenv('YAHOO_CLIENT_ID'));
 	}
 
 	/**
