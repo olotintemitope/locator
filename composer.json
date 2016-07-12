@@ -1,7 +1,7 @@
 {
     "name": "claz/wishi",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "description": "Aa antagonistic package to get different countries, states and counties.",
+    "keywords": ["framework", "PHP", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
