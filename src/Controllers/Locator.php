@@ -5,7 +5,7 @@ namespace Wishi\Controllers;
 use Wishi\Model\County;
 use Wishi\Model\Country;
 use Wishi\Model\State;
-use Dotenv\Dotenv as Dotenv;
+use Dotenv\Dotenv;
 use GuzzleHttp\Client as GuzzleClient;
 
 class Locator
