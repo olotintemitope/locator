@@ -2,11 +2,13 @@
 
 namespace Wishi\Controllers;
 
+use Exception;
+use Dotenv\Dotenv;
+use Wishi\Model\State;
 use Wishi\Model\County;
 use Wishi\Model\Country;
-use Wishi\Model\State;
-use Dotenv\Dotenv;
 use GuzzleHttp\Client as GuzzleClient;
+use Wishi\Exceptions\ResourceNotFoundException;
 
 class Locator
 {
@@ -38,15 +40,19 @@ class Locator
 		}, $data));
 	}
 
-	public function getStates($countryName)
+	public function getStates($stateName)
 	{
-		$data = $this->respondJSON( $this->getter('states/' . $countryName));
+		try {
+			$data = $this->respondJSON( $this->getter('states/' . $stateName));
+			$places = $data['places']['place'];
 
-		$places = $data['places']['place'];
+			return collect(array_map( function ($data) {
+				return new State($data);
+			}, $places));
 
-		return collect(array_map( function ($data) {
-			return new State($data);
-		}, $places));
+		} catch(Exception $e) {
+			throw ResourceNotFoundException::create($stateName);
+		}
 	}
 
 	/**
