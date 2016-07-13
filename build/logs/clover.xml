@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1468428896">
-  <project timestamp="1468428896">
-    <metrics files="0" loc="0" ncloc="0" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+<coverage generated="1468433099">
+  <project timestamp="1468433099">
+    <package name="Wishi\Controllers">
+      <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Controllers/Locator.php">
+        <class name="Locator" namespace="Wishi\Controllers">
+          <metrics methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="0" elements="23" coveredelements="0"/>
+        </class>
+        <line num="25" type="method" name="__construct" crap="2" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="32" type="method" name="getCountries" crap="2" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="41" type="method" name="getStates" crap="2" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="59" type="method" name="getCounties" crap="2" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="65" type="method" name="anonymous function" crap="2" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="75" type="method" name="getter" crap="2" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="85" type="method" name="respondJSON" crap="2" count="0"/>
+        <line num="87" type="stmt" count="0"/>
+        <metrics loc="88" ncloc="65" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="0" elements="23" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="Wishi\Facades">
+      <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Facades/Locator.php">
+        <class name="Locator" namespace="Wishi\Facades">
+          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        </class>
+        <line num="17" type="method" name="getFacadeAccessor" crap="2" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <metrics loc="20" ncloc="12" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="Wishi\Model">
+      <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Model/Country.php">
+        <class name="Country" namespace="Wishi\Model">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="10" ncloc="10" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Model/County.php">
+        <class name="County" namespace="Wishi\Model">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="9" ncloc="9" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Model/Location.php">
+        <class name="Location" namespace="Wishi\Model">
+          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
+        </class>
+        <line num="25" type="method" name="__construct" crap="2" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <metrics loc="33" ncloc="21" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
+      </file>
+      <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Model/State.php">
+        <class name="State" namespace="Wishi\Model">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="10" ncloc="10" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="Wishi\Providers">
+      <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Providers/LocatorServiceProvider.php">
+        <class name="LocatorServiceProvider" namespace="Wishi\Providers">
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
+        </class>
+        <line num="26" type="method" name="anonymous function" crap="2" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="42" type="method" name="provides" crap="2" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <metrics loc="45" ncloc="28" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="8" coveredelements="0"/>
+      </file>
+    </package>
+    <metrics files="7" loc="215" ncloc="155" classes="7" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="0" elements="38" coveredelements="0"/>
   </project>
 </coverage>
