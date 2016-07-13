@@ -8,7 +8,7 @@ use Wishi\Model\State;
 use Wishi\Model\County;
 use Wishi\Model\Country;
 use GuzzleHttp\Client as GuzzleClient;
-use Wishi\Exceptions\StateNotFoundException;
+use Wishi\Exceptions\ResourceNotFoundException;
 
 class Locator
 {
@@ -51,7 +51,7 @@ class Locator
 			}, $places));
 
 		} catch(Exception $e) {
-			throw StateNotFoundException::create($stateName);
+			throw ResourceNotFoundException::create($stateName);
 		}
 	}
 

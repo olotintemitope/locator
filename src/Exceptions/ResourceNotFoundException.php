@@ -4,11 +4,11 @@ namespace Wishi\Exceptions;
 
 use Exception;
 
-class StateNotFoundException extends Exception
+class ResourceNotFoundException extends Exception
 {
     public static function create($countryName)
     {
-        $message = ucwords($countryName).' Not found, please check lists of Counties! ';
+        $message = ucwords($countryName).' Not found, please try again!';
         return new static($message);
     }
 }
