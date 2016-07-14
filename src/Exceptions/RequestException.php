@@ -4,7 +4,7 @@ namespace Wishi\Exceptions;
 
 use Exception;
 
-class ResourceNotFoundException extends Exception
+class RequestException extends Exception
 {
     public static function create($statusCode)
     {
