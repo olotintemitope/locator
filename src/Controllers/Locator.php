@@ -8,7 +8,7 @@ use Wishi\Model\State;
 use Wishi\Model\County;
 use Wishi\Model\Country;
 use GuzzleHttp\Client as GuzzleClient;
-use Wishi\Exceptions\ResourceNotFoundException;
+use Wishi\Exceptions\RequestException;
 
 class Locator
 {
@@ -51,7 +51,7 @@ class Locator
 			}, $places));
 
 		} catch(Exception $e) {
-			throw ResourceNotFoundException::create($stateName);
+			throw RequestException::create($e->getCode());
 		}
 	}
 
@@ -64,13 +64,17 @@ class Locator
 	 */
 	public function getCounties($stateName)
 	{
-		$data = $this->respondJSON($this->getter('counties/'.$stateName));
+		try {
+			$data = $this->respondJSON($this->getter('counties/'.$stateName));
+			$places = $data['places']['place'];
 
-		$places = $data['places']['place'];
+			return collect(array_map(function ($county) {
+				return new County($county);
+			}, $places));
 
-		return collect(array_map(function ($county) {
-			return new County($county);
-		}, $places));
+		} catch (Exception $e) {
+			throw RequestException::create($e->getCode());
+		}
 	}
 
 	/**
