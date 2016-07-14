@@ -1,48 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1468509800">
-  <project timestamp="1468509800">
+<coverage generated="1468511520">
+  <project timestamp="1468511520">
     <package name="Wishi\Controllers">
       <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Controllers/Locator.php">
         <class name="Locator" namespace="Wishi\Controllers">
-          <metrics methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="16" elements="25" coveredelements="22"/>
+          <metrics methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="25" coveredelements="25"/>
         </class>
-        <line num="27" type="method" name="__construct" crap="1" count="3"/>
-        <line num="29" type="stmt" count="3"/>
-        <line num="31" type="stmt" count="3"/>
-        <line num="32" type="stmt" count="3"/>
+        <line num="27" type="method" name="__construct" crap="1" count="4"/>
+        <line num="29" type="stmt" count="4"/>
+        <line num="31" type="stmt" count="4"/>
+        <line num="32" type="stmt" count="4"/>
         <line num="34" type="method" name="getCountries" crap="1" count="1"/>
         <line num="36" type="stmt" count="1"/>
         <line num="39" type="stmt" count="1"/>
         <line num="40" type="stmt" count="1"/>
-        <line num="43" type="method" name="getStates" crap="2.15" count="1"/>
-        <line num="46" type="stmt" count="1"/>
+        <line num="43" type="method" name="getStates" crap="2" count="2"/>
+        <line num="46" type="stmt" count="2"/>
         <line num="47" type="stmt" count="1"/>
         <line num="50" type="stmt" count="1"/>
         <line num="51" type="stmt" count="1"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="65" type="method" name="getCounties" crap="1" count="1"/>
-        <line num="67" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="66" type="method" name="getCounties" crap="2" count="1"/>
         <line num="69" type="stmt" count="1"/>
-        <line num="71" type="method" name="anonymous function" crap="1" count="1"/>
-        <line num="72" type="stmt" count="1"/>
+        <line num="70" type="stmt" count="1"/>
+        <line num="72" type="method" name="anonymous function" crap="1" count="1"/>
         <line num="73" type="stmt" count="1"/>
-        <line num="81" type="method" name="getter" crap="1" count="3"/>
-        <line num="83" type="stmt" count="3"/>
-        <line num="91" type="method" name="respondJSON" crap="1" count="3"/>
-        <line num="93" type="stmt" count="3"/>
-        <metrics loc="94" ncloc="71" classes="1" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="16" elements="25" coveredelements="22"/>
+        <line num="74" type="stmt" count="1"/>
+        <line num="76" type="stmt" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="86" type="method" name="getter" crap="1" count="4"/>
+        <line num="88" type="stmt" count="4"/>
+        <line num="96" type="method" name="respondJSON" crap="1" count="3"/>
+        <line num="98" type="stmt" count="3"/>
+        <metrics loc="99" ncloc="74" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="18" elements="27" coveredelements="25"/>
       </file>
     </package>
     <package name="Wishi\Exceptions">
-      <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Exceptions/ResourceNotFoundException.php">
-        <class name="ResourceNotFoundException" namespace="Wishi\Exceptions">
-          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+      <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Exceptions/RequestException.php">
+        <class name="RequestException" namespace="Wishi\Exceptions">
+          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="9" elements="14" coveredelements="9"/>
         </class>
-        <line num="9" type="method" name="create" crap="2" count="0"/>
-        <line num="11" type="stmt" count="0"/>
-        <line num="12" type="stmt" count="0"/>
-        <metrics loc="13" ncloc="13" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+        <line num="9" type="method" name="create" crap="3.26" count="1"/>
+        <line num="11" type="stmt" count="1"/>
+        <line num="14" type="stmt" count="1"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="17" type="stmt" count="1"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="1"/>
+        <line num="21" type="stmt" count="1"/>
+        <line num="22" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="26" type="stmt" count="1"/>
+        <metrics loc="27" ncloc="27" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="9" elements="14" coveredelements="9"/>
       </file>
     </package>
     <package name="Wishi\Facades">
@@ -102,6 +115,6 @@
         <metrics loc="45" ncloc="28" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="8" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="8" loc="234" ncloc="174" classes="8" methods="12" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="20" elements="43" coveredelements="27"/>
+    <metrics files="8" loc="253" ncloc="191" classes="8" methods="12" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="44" coveredstatements="31" elements="56" coveredelements="39"/>
   </project>
 </coverage>

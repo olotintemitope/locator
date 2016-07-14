@@ -40,10 +40,10 @@ class Locator
 		}, $data));
 	}
 
-	public function getStates($stateName)
+	public function getStates($countryName)
 	{
 		try {
-			$data = $this->respondJSON( $this->getter('states/' . $stateName));
+			$data = $this->respondJSON( $this->getter('states/' . $countryName));
 			$places = $data['places']['place'];
 
 			return collect(array_map( function ($data) {
@@ -51,6 +51,7 @@ class Locator
 			}, $places));
 
 		} catch(Exception $e) {
+			// dd("hihihihi");
 			throw RequestException::create($e->getCode());
 		}
 	}

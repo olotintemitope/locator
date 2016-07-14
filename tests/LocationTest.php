@@ -29,12 +29,12 @@ class TestCase extends PHPUnit_Framework_TestCase
 				'place' => [$this->placeOne, $this->placeTwo]
 			]
 		]);
-
-		$this->prepareMock();
 	}
 
 	public function testGetCountries()
 	{
+		$this->prepareMock();
+
 		$countries = $this->locator->getCountries();
 
 		$this->performAssertions($countries, 'Country');
@@ -42,6 +42,8 @@ class TestCase extends PHPUnit_Framework_TestCase
 
 	public function testGetStates()
 	{
+		$this->prepareMock();
+
 		$states = $this->locator->getStates('Country');
 
 		$this->performAssertions($states, 'State');
@@ -49,9 +51,25 @@ class TestCase extends PHPUnit_Framework_TestCase
 
 	public function testGetCounties()
 	{
+		$this->prepareMock();
+
 		$counties = $this->locator->getCounties('State');
 
 		$this->performAssertions($counties, 'County');
+	}
+
+	/**
+	 * @expectedException Wishi\Exceptions\RequestException
+	 * @expectedExceptionMessage  Wishi Exception: Oops something went wrong, please try again!
+	 * 
+	 * @return [type] [description]
+	 */
+	public function testExceptions()
+	{
+		$res = M::mock('GuzzleHttp\Psr7\Response');
+		$this->client->shouldReceive('request')->andThrow('Wishi\Exceptions\RequestException');
+
+		$states = $this->locator->getStates('CountryWithNoStates');
 	}
 
 	private function prepareMock()
