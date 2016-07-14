@@ -7,6 +7,8 @@ class TestCase extends PHPUnit_Framework_TestCase
 	private $placeOne = [ 'woeid' => 120, 'name' => 'Nigeria', 'uri' => 'http://url_for_nigeria'];
 	
 	private $placeTwo = [ 'woeid' => 121, 'name' => 'Ghana', 'uri' => 'http://url_for_ghana'];
+
+	protected $data;
 	
 	protected $locator;
 
@@ -21,27 +23,50 @@ class TestCase extends PHPUnit_Framework_TestCase
 		$this->dotenv->shouldReceive('load');
 
 		$this->locator = new Wishi\Controllers\Locator($this->client, $this->dotenv);
-	}
 
-	public function testGetCountries()
-	{
-		$data = json_encode([
+		$this->data = json_encode([
 			'places' => [
 				'place' => [$this->placeOne, $this->placeTwo]
 			]
 		]);
 
-		$res = M::mock('GuzzleHttp\Psr7\Response');
+		$this->prepareMock();
+	}
 
-		$this->client->shouldReceive('request')->andReturn($res);
-		$res->shouldReceive('getBody')->andReturn($data);
-
+	public function testGetCountries()
+	{
 		$countries = $this->locator->getCountries();
 
-		$this->assertInstanceOf('Illuminate\Support\Collection', $countries);
+		$this->performAssertions($countries, 'Country');
+	}
 
-		foreach ($countries as $country) {
-			$this->assertInstanceOf('Wishi\Model\Country', $country);
+	public function testGetStates()
+	{
+		$states = $this->locator->getStates('Country');
+
+		$this->performAssertions($states, 'State');
+	}
+
+	public function testGetCounties()
+	{
+		$counties = $this->locator->getCounties('State');
+
+		$this->performAssertions($counties, 'County');
+	}
+
+	private function prepareMock()
+	{
+		$res = M::mock('GuzzleHttp\Psr7\Response');
+		$this->client->shouldReceive('request')->andReturn($res);
+		$res->shouldReceive('getBody')->andReturn($this->data);
+	}
+
+	private function performAssertions($locations, $class)
+	{
+		$this->assertInstanceOf('Illuminate\Support\Collection', $locations);
+
+		foreach ($locations as $location) {
+			$this->assertInstanceOf('Wishi\Model' . "\\$class", $location);
 		}
 	}
 }
