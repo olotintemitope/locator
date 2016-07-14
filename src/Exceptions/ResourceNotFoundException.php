@@ -6,9 +6,23 @@ use Exception;
 
 class ResourceNotFoundException extends Exception
 {
-    public static function create($countryName)
+    public static function create($statusCode)
     {
-        $message = ucwords($countryName).' Not found, please try again!';
+        $meaning = null;
+
+        switch ($statusCode) {
+            case 404:
+            $meaning = 'Resource Not found';
+                break;
+            case 500:
+            $meaning = 'Internal server error';
+                break;
+            default:
+            $meaning = 'Oops something went wrong';
+                break;
+        }
+
+        $message = ' Wishi Exception: '.$meaning. ', please try again!';
         return new static($message);
     }
 }

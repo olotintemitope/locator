@@ -51,7 +51,7 @@ class Locator
 			}, $places));
 
 		} catch(Exception $e) {
-			throw ResourceNotFoundException::create($stateName);
+			throw ResourceNotFoundException::create($e->getCode());
 		}
 	}
 
