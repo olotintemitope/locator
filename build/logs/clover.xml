@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1468511520">
-  <project timestamp="1468511520">
+<coverage generated="1468511598">
+  <project timestamp="1468511598">
     <package name="Wishi\Controllers">
       <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Controllers/Locator.php">
         <class name="Locator" namespace="Wishi\Controllers">
