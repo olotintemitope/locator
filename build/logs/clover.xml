@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1468583932">
-  <project timestamp="1468583932">
+<coverage generated="1468584376">
+  <project timestamp="1468584376">
     <package name="Wishi\Controllers">
       <file name="/home/elisha-wigwe-roy/code/OS/get-country-info/src/Controllers/Locator.php">
         <class name="Locator" namespace="Wishi\Controllers">
@@ -10,17 +10,17 @@
         <line num="29" type="stmt" count="4"/>
         <line num="31" type="stmt" count="4"/>
         <line num="32" type="stmt" count="4"/>
-        <line num="34" type="method" name="getCountries" crap="2.50" count="1"/>
-        <line num="37" type="stmt" count="1"/>
+        <line num="34" type="method" name="getCountries" crap="2" count="2"/>
+        <line num="37" type="stmt" count="2"/>
         <line num="39" type="stmt" count="1"/>
-        <line num="41" type="stmt" count="0"/>
-        <line num="42" type="stmt" count="0"/>
-        <line num="46" type="method" name="getStates" crap="2" count="2"/>
-        <line num="49" type="stmt" count="2"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="46" type="method" name="getStates" crap="2.26" count="1"/>
+        <line num="49" type="stmt" count="1"/>
         <line num="50" type="stmt" count="1"/>
         <line num="52" type="stmt" count="1"/>
-        <line num="54" type="stmt" count="1"/>
-        <line num="55" type="stmt" count="1"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="0"/>
         <line num="66" type="method" name="getCounties" crap="2.26" count="1"/>
         <line num="69" type="stmt" count="1"/>
         <line num="70" type="stmt" count="1"/>

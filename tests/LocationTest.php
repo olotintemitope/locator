@@ -69,7 +69,9 @@ class TestCase extends PHPUnit_Framework_TestCase
 		$res = M::mock('GuzzleHttp\Psr7\Response');
 		$this->client->shouldReceive('request')->andThrow('Wishi\Exceptions\RequestException');
 
+		$states = $this->locator->getCountries();
 		$states = $this->locator->getStates('CountryWithNoStates');
+		$states = $this->locator->getCounties('StateWithNoCounties');
 	}
 
 	private function prepareMock()
