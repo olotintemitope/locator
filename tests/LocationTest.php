@@ -64,14 +64,40 @@ class TestCase extends PHPUnit_Framework_TestCase
 	 * 
 	 * @return [type] [description]
 	 */
-	public function testExceptions()
+	public function testExceptionsForCountry()
+	{
+		$this->mockForException();
+		$states = $this->locator->getCountries();
+	}
+
+	/**
+	 * @expectedException Wishi\Exceptions\RequestException
+	 * @expectedExceptionMessage  Wishi Exception: Oops something went wrong, please try again!
+	 * 
+	 * @return [type] [description]
+	 */
+	public function testExceptionsForState()
+	{
+		$this->mockForException();
+		$this->locator->getStates('CountryWithNoStates');
+	}
+
+	/**
+	 * @expectedException Wishi\Exceptions\RequestException
+	 * @expectedExceptionMessage  Wishi Exception: Oops something went wrong, please try again!
+	 * 
+	 * @return [type] [description]
+	 */
+	public function testExceptionsForCounty()
+	{
+		$this->mockForException();
+		$this->locator->getCounties('StateWithNoCounties');
+	}
+
+	private function mockForException()
 	{
 		$res = M::mock('GuzzleHttp\Psr7\Response');
 		$this->client->shouldReceive('request')->andThrow('Wishi\Exceptions\RequestException');
-
-		$states = $this->locator->getCountries();
-		$states = $this->locator->getStates('CountryWithNoStates');
-		$states = $this->locator->getCounties('StateWithNoCounties');
 	}
 
 	private function prepareMock()
