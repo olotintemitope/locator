@@ -33,22 +33,23 @@ class Locator
 
 	public function getCountries()
 	{
-		$data = $this->respondJSON($this->getter('countries'))['places']['place'];
+		try {
+			$places = $this->respondJSON($this->getter('countries'))['places']['place'];
 
-		return collect(array_map( function ($countryData) {
-			return new Country($countryData);
-		}, $data));
+			return $this->makeCollection($places, 'country');
+			
+		} catch(Exception $e) {
+			throw RequestException::create($e->getCode());
+		}
 	}
 
-	public function getStates($stateName)
+	public function getStates($countryName)
 	{
 		try {
-			$data = $this->respondJSON( $this->getter('states/' . $stateName));
+			$data = $this->respondJSON( $this->getter('states/' . $countryName));
 			$places = $data['places']['place'];
 
-			return collect(array_map( function ($data) {
-				return new State($data);
-			}, $places));
+			return $this->makeCollection($places, 'state');
 
 		} catch(Exception $e) {
 			throw RequestException::create($e->getCode());
@@ -68,13 +69,28 @@ class Locator
 			$data = $this->respondJSON($this->getter('counties/'.$stateName));
 			$places = $data['places']['place'];
 
-			return collect(array_map(function ($county) {
-				return new County($county);
-			}, $places));
+			return $this->makeCollection($places, 'county');
 
 		} catch (Exception $e) {
 			throw RequestException::create($e->getCode());
 		}
+	}
+
+	/**
+	 * Make a collection of model instances.
+	 * 
+	 * @param  An array containing information of each location.
+	 * @param  The name of the model class.
+	 * 
+	 * @return Illuminate\Support\Collection
+	 */
+	private function makeCollection($places, $model)
+	{
+		$class = 'Wishi\Model\\' . ucwords($model);
+
+		return collect(array_map(function ($place) use($class) {
+			return new $class($place);
+		}, $places));
 	}
 
 	/**

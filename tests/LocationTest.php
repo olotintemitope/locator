@@ -29,12 +29,12 @@ class TestCase extends PHPUnit_Framework_TestCase
 				'place' => [$this->placeOne, $this->placeTwo]
 			]
 		]);
-
-		$this->prepareMock();
 	}
 
 	public function testGetCountries()
 	{
+		$this->prepareMock();
+
 		$countries = $this->locator->getCountries();
 
 		$this->performAssertions($countries, 'Country');
@@ -42,6 +42,8 @@ class TestCase extends PHPUnit_Framework_TestCase
 
 	public function testGetStates()
 	{
+		$this->prepareMock();
+
 		$states = $this->locator->getStates('Country');
 
 		$this->performAssertions($states, 'State');
@@ -49,9 +51,53 @@ class TestCase extends PHPUnit_Framework_TestCase
 
 	public function testGetCounties()
 	{
+		$this->prepareMock();
+
 		$counties = $this->locator->getCounties('State');
 
 		$this->performAssertions($counties, 'County');
+	}
+
+	/**
+	 * @expectedException Wishi\Exceptions\RequestException
+	 * @expectedExceptionMessage  Wishi Exception: Oops something went wrong, please try again!
+	 * 
+	 * @return [type] [description]
+	 */
+	public function testExceptionsForCountry()
+	{
+		$this->mockForException();
+		$states = $this->locator->getCountries();
+	}
+
+	/**
+	 * @expectedException Wishi\Exceptions\RequestException
+	 * @expectedExceptionMessage  Wishi Exception: Oops something went wrong, please try again!
+	 * 
+	 * @return [type] [description]
+	 */
+	public function testExceptionsForState()
+	{
+		$this->mockForException();
+		$this->locator->getStates('CountryWithNoStates');
+	}
+
+	/**
+	 * @expectedException Wishi\Exceptions\RequestException
+	 * @expectedExceptionMessage  Wishi Exception: Oops something went wrong, please try again!
+	 * 
+	 * @return [type] [description]
+	 */
+	public function testExceptionsForCounty()
+	{
+		$this->mockForException();
+		$this->locator->getCounties('StateWithNoCounties');
+	}
+
+	private function mockForException()
+	{
+		$res = M::mock('GuzzleHttp\Psr7\Response');
+		$this->client->shouldReceive('request')->andThrow('Wishi\Exceptions\RequestException');
 	}
 
 	private function prepareMock()
