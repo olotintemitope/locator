@@ -3,7 +3,7 @@
 Locator package leveraged on Yahoo places API to help developers ease the stress of getting information about places around the world. It is a PHP project that provides a rich RESTFUL API for developers around the world. information such as 
 * Countries, 
 * States in the country 
-* Counties in states
+* Counties in the state
  
 ## Dependencies
 --- 
