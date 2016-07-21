@@ -16,13 +16,52 @@ Locator package leveraged on Yahoo places API to help developers ease the stress
 ### Using plain PHP
 If you are using this project with a plain PHP project, follow the following steps:
 
-* `composer require claz/locator dev-develop` 
+* On your terminal run `composer require claz/locator dev-develop` 
 
-* In your `composer.json` file, add `require claz/locator dev-develop` 
+* Load autoload.php from vendor folder `require_once('vendor/autoload.php');` 
 
-* In your main file require `claz/locator` 
+* then load package `use Wishi\Controllers\Locator;`  and Also your Guzzle Client `use GuzzleHttp\Client as GuzzleClient;`
+ and Dotenv `use Dotenv\Dotenv as Dotenv;`
 
 * and you are good to go. 
+
+### Example 
+
+- To get all countries in the world.
+
+`
+<?php
+    require_once('vendor/autoload.php');
+
+    use Dotenv\Dotenv as Dotenv;
+    use GuzzleHttp\Client as GuzzleClient;
+    use Wishi\Controllers\Locator;
+
+    $client = new GuzzleClient();
+    $dotenv = new Dotenv(__DIR__);
+
+    $locator = new Locator($client, $dotenv);
+
+    try {
+        print_r($locator->getCountries());
+    } catch (Wishi\Exceptions\RequestException $e) {
+        echo $e->getMessage();
+    }
+`
+
+-  To get states under a country just call the getStates method and pass the country name as an argument
+
+`
+    <?php
+        print_r($locator->getStates('Nigeria'));
+`
+
+- To get all counties/Local Government under a state, pass the name of the state as an argument to getCouties method.
+
+`
+    <?php
+        print_r($locator->getCounties('Nigeria'));
+`
 
 --- 
 ### Using with Laravel 
