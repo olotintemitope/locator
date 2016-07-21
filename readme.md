@@ -24,7 +24,7 @@ If you are using this project with a plain PHP project, follow the following ste
 
 4. and you are good to go. 
 
- --- 
+--- 
 ### Using with Laravel 
 If you are using this project with Laravel, follow the following steps:
 
