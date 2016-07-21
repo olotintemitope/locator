@@ -27,9 +27,9 @@ If you are using this project with a plain PHP project, follow the following ste
 
 ### Example 
 
-- To get all countries in the world.
+- To get all the countries in the world.
 
-`<?php
+<?php
     require_once('vendor/autoload.php');
 
     use Dotenv\Dotenv as Dotenv;
@@ -45,7 +45,7 @@ If you are using this project with a plain PHP project, follow the following ste
         print_r($locator->getCountries());
     } catch (Wishi\Exceptions\RequestException $e) {
         echo $e->getMessage();
-    }`
+    }
 
 -  To get states under a country just call the getStates method and pass the country name as an argument
 
