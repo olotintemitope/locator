@@ -1,6 +1,6 @@
 # Locator
 ---
-If you have ever needed basic information about countries, and their states, then Locator is for you. Locator is a PHP package that works with the Yahoo API. It return a data that you need just by calling one method. There is a Service Provider and a Facade to make it easy to integrate with your Laravel project. It can also be used with other PHP frameworks like Lumen, CakePHP, Zend, etc. Version 1.0.0 only provides information about the following:
+If you have ever needed basic information about countries, and their states, then Locator is for you. Locator is a PHP package that works with the Yahoo API. It returns data that you need just by calling one method. There is a Service Provider and a Facade to make it easy to integrate with your Laravel project. It can also be used with other PHP frameworks like Lumen, CakePHP, Zend, etc. Version 1.0.0 only provides information about the following:
 * Countries
 * States in the country 
 * Counties in the state
@@ -16,10 +16,10 @@ If you have ever needed basic information about countries, and their states, the
 
 To use this package with a PHP project, first require the package using composer.
 ```PHP
-composer require claz/locator dev-develop
+composer require claz/locator
 ```
 
-* Note that you must be registered in Yahoo as a developer. Add you Yahoo details to you environment variable.
+* Note that you must be registered in Yahoo as a developer. Add your Yahoo details to your environment variables.
 ```ENV
 YAHOO_CLIENT_ID=*********************************
 YAHOO_CLIENT_SECRET=********************************
@@ -70,7 +70,7 @@ $countries = $locator->getCountries();
 // With the Facade in Laravel applications
 $countries = Locator::getCountries();
 
-echo $countries; // Collection of countries
+var_dump($countries); // Collection of countries
 ```
 * To get all the states in a country.
 ```PHP
@@ -80,7 +80,7 @@ $states = $locator->getStates('Nigeria');
 // With the Facade in Laravel applications
 $states = Locator::getStates('Nigeria');
 
-echo $states; // Collection of states
+var_dump($states); // Collection of states
 ```
 * To get all the counties in a state.
 ```PHP
@@ -90,7 +90,7 @@ $counties = $locator->getCounties('Lagos');
 // With the Facade in Laravel applications
 $counties = Locator::getCounties('Lagos');
 
-echo $counties; // Collection of counties
+var_dump($counties); // Collection of counties
 ```
 
 One very common use is illustrated below in a Laravel project that lists all the state in the Nigeria.
