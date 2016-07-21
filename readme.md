@@ -29,8 +29,7 @@ If you are using this project with a plain PHP project, follow the following ste
 
 - To get all the countries in the world.
 
-` <?php 
-    require_once('vendor/autoload.php');
+`   require_once('vendor/autoload.php');
 
     use Dotenv\Dotenv as Dotenv;
     use GuzzleHttp\Client as GuzzleClient;
