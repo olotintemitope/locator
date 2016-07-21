@@ -33,27 +33,17 @@ class Locator
 
 	public function getCountries()
 	{
-		try {
-			$places = $this->respondJSON($this->getter('countries'))['places']['place'];
+		$places = $this->respondJSON($this->getter('countries'))['places']['place'];
 
-			return $this->makeCollection($places, 'country');
-			
-		} catch(Exception $e) {
-			throw RequestException::create($e->getCode());
-		}
+		return $this->makeCollection($places, 'country');
 	}
 
 	public function getStates($countryName)
 	{
-		try {
-			$data = $this->respondJSON( $this->getter('states/' . $countryName));
-			$places = $data['places']['place'];
+		$data = $this->respondJSON( $this->getter('states/' . $countryName));
+		$places = $data['places']['place'];
 
-			return $this->makeCollection($places, 'state');
-
-		} catch(Exception $e) {
-			throw RequestException::create($e->getCode());
-		}
+		return $this->makeCollection($places, 'state');
 	}
 
 	/**
@@ -65,15 +55,10 @@ class Locator
 	 */
 	public function getCounties($stateName)
 	{
-		try {
-			$data = $this->respondJSON($this->getter('counties/'.$stateName));
-			$places = $data['places']['place'];
+		$data = $this->respondJSON($this->getter('counties/'.$stateName));
+		$places = $data['places']['place'];
 
-			return $this->makeCollection($places, 'county');
-
-		} catch (Exception $e) {
-			throw RequestException::create($e->getCode());
-		}
+		return $this->makeCollection($places, 'county');
 	}
 
 	/**
@@ -100,7 +85,11 @@ class Locator
 	 */
 	private function getter ($string)
 	{
-		return $this->client->request('GET', self::API_URL . $string . self::API_ATT . getenv('YAHOO_CLIENT_ID'));
+		try {
+			return $this->client->request('GET', self::API_URL . $string . self::API_ATT . getenv('YAHOO_CLIENT_ID'));
+		} catch (Exception $e) {
+			throw RequestException::create($e->getCode());
+		}
 	}
 
 	/**
