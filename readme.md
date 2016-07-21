@@ -29,7 +29,9 @@ If you are using this project with a plain PHP project, follow the following ste
 
 - To get all the countries in the world.
 
-<?php require_once('vendor/autoload.php');
+` <?php 
+    require_once('vendor/autoload.php');
+
     use Dotenv\Dotenv as Dotenv;
     use GuzzleHttp\Client as GuzzleClient;
     use Wishi\Controllers\Locator;
@@ -43,7 +45,7 @@ If you are using this project with a plain PHP project, follow the following ste
         print_r($locator->getCountries());
     } catch (Wishi\Exceptions\RequestException $e) {
         echo $e->getMessage();
-    }
+    } `
 
 -  To get states under a country just call the getStates method and pass the country name as an argument
 
@@ -70,6 +72,22 @@ If you are using this project with Laravel, follow the following steps:
 * Register the ServiceProvider ` Wishi\Providers\LocatorServiceProvider::class `
 
 * and the facade  ` Locator => Wishi\Facades\Locator::class `
+
+### Example
+
+ * Import the package  `use Locator`
+ 
+ - To get collection of countries 
+
+ ` Locator::getCounties(); `
+
+ - To get collection of states in a counrty, pass the country name as an argument
+
+ ` Locator::getStates('Nigeria'); `
+
+ - To get collection of counties/Local Governments, pass the state as an argument
+
+ ` Locator::getCounties('Lagos'); `
 
 ### Using with Yii, ZendF, CakePHP, and other PHP Frameworks 
 If you are using this project with other PHP frameworks, it is easy to plugin this changes to your project main directory.
