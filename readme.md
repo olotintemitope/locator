@@ -23,8 +23,9 @@ If you are using this project with a plain PHP project, follow the following ste
 ### Using with Laravel 
 If you are using this project with Laravel, follow the following steps:
 1. `composer require claz/locator dev-develop` 
-2.  add `require claz/locator` to your service provider 
-3.  and you are good to go
+2. Open app.config in config folder and,
+3. Register the ServiceProvider ` Wishi\Providers\LocatorServiceProvider::class `
+4. and the facade  ` Locator => Wishi\Facades\Locator::class `
 
 ### Using with Yii, ZendF, CakePHP, and other PHP Frameworks 
 If you are using this project with other PHP frameworks, it is easy to plugin this changes to your project main directory.
