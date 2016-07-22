@@ -33,14 +33,10 @@ If you are using this project with a plain PHP project, follow the following ste
 require_once ('vendor/autoload.php')
 
 use Wishi\Controllers\Locator;
-use GuzzleHttp\Client as GuzzleClient;
-use Dotenv\Dotenv;
 ```
 * Instantiate the object and you are good to go.
 ```PHP
-$client = new Client;
-$dotenv = new Dotenv;
-$locator = new Locator($client, $dotenv);
+$locator = new Locator();
 ```
 ### Using with Laravel 
 If you are using this project with Laravel, follow the following steps:
