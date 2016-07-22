@@ -24,7 +24,7 @@ class BaseController
 	{
 		$this->client = $client == null ? new GuzzleClient() : $client;
 
-		$dotenv = $dotenv == null ? new Dotenv(__DIR__ . "/../../../../") : $dotenv;
+		$dotenv = $dotenv == null ? new Dotenv(__DIR__ . "/../../../../../") : $dotenv;
 
 		$dotenv->load();
 	}
