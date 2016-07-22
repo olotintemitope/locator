@@ -3,34 +3,14 @@
 namespace Wishi\Controllers;
 
 use Exception;
-use Dotenv\Dotenv;
 use Wishi\Model\State;
 use Wishi\Model\County;
 use Wishi\Model\Country;
-use GuzzleHttp\Client as GuzzleClient;
+use Wishi\Controllers\BaseController;
 use Wishi\Exceptions\RequestException;
 
-class Locator
+class Locator extends BaseController
 {
-	/**
-	 * The GuzzleClient instance to-be.
-	 */
-	protected $client;
-
-	const API_URL = 'http://where.yahooapis.com/v1/';
-
-	const API_ATT = '?format=json&appid=';
-
-	/**
-	 * Create an instance of Guzzle
-	 */
-	public function __construct(GuzzleClient $client, Dotenv $dotenv)
-	{
-		$this->client = $client;
-
-		$dotenv->load();
-	}
-
 	public function getCountries()
 	{
 		$places = $this->respondJSON($this->getter('countries'))['places']['place'];
