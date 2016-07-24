@@ -34,7 +34,7 @@ require_once ('vendor/autoload.php')
 
 use Wishi\Controllers\Locator;
 ```
-* Instantiate the object and you are good to go.
+* Instantiate the Locator class and you are good to go.
 ```PHP
 $locator = new Locator();
 ```
