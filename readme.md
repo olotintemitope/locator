@@ -43,7 +43,7 @@ If you are using this project with Laravel, follow the following steps:
 
 * Open app.config in config folder and,
 
-* Register the ServiceProvider inside `config.app.php`
+* Register the ServiceProvider inside `config.php`
 ```PHP
 Wishi\Providers\LocatorServiceProvider::class,
 ```
