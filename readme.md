@@ -22,7 +22,6 @@ composer require claz/locator
 * Note that you must be registered in Yahoo as a developer. Add your Yahoo details to your environment variables.
 ```ENV
 YAHOO_CLIENT_ID=*********************************
-YAHOO_CLIENT_SECRET=********************************
 ```
 ### Using plain PHP
 If you are using this project with a plain PHP project, follow the following steps:
