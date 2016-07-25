@@ -193,12 +193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "682d637bec5dd750bba5568e980888a639d7c35b"
+                "reference": "b1501c9fd5845473f39b89db5ac9a39a7ab62a38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/682d637bec5dd750bba5568e980888a639d7c35b",
-                "reference": "682d637bec5dd750bba5568e980888a639d7c35b",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/b1501c9fd5845473f39b89db5ac9a39a7ab62a38",
+                "reference": "b1501c9fd5845473f39b89db5ac9a39a7ab62a38",
                 "shasum": ""
             },
             "require": {
@@ -250,7 +250,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-07-21 23:46:37"
+            "time": "2016-07-25 11:34:12"
         },
         {
             "name": "illuminate/contracts",
@@ -300,12 +300,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "4ee7e1c254a76c226fd8f93ac517fdbaedbd0640"
+                "reference": "eddfbcb076e88a29df6a449eae693e0fbe015cfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/4ee7e1c254a76c226fd8f93ac517fdbaedbd0640",
-                "reference": "4ee7e1c254a76c226fd8f93ac517fdbaedbd0640",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/eddfbcb076e88a29df6a449eae693e0fbe015cfd",
+                "reference": "eddfbcb076e88a29df6a449eae693e0fbe015cfd",
                 "shasum": ""
             },
             "require": {
@@ -351,7 +351,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2016-07-21 14:39:20"
+            "time": "2016-07-25 01:35:06"
         },
         {
             "name": "paragonie/random_compat",

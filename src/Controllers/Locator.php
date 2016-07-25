@@ -2,22 +2,35 @@
 
 namespace Wishi\Controllers;
 
-use Exception;
 use Wishi\Model\State;
 use Wishi\Model\County;
 use Wishi\Model\Country;
 use Wishi\Controllers\BaseController;
-use Wishi\Exceptions\RequestException;
 
 class Locator extends BaseController
 {
+	/**
+	 * This method gets all the countries.
+	 *
+	 * @param void
+	 *
+	 * @return collection
+	*/
 	public function getCountries()
 	{
-		$places = $this->respondJSON($this->getter('countries'))['places']['place'];
+		$data = $this->respondJSON($this->getter('countries'));
+		$places = $data['places']['place'];
 
 		return $this->makeCollection($places, 'country');
 	}
 
+	/**
+	 * This method get all the states under a valid country name.
+	 *
+	 * @param $countryName
+	 *
+	 * @return collection
+	 */
 	public function getStates($countryName)
 	{
 		$data = $this->respondJSON( $this->getter('states/' . $countryName));

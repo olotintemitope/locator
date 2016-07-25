@@ -2,7 +2,9 @@
 
 namespace Wishi\Controllers;
 
+use Exception;
 use Dotenv\Dotenv;
+use Wishi\Exceptions\RequestException;
 use GuzzleHttp\Client as GuzzleClient;
 
 class BaseController
@@ -17,7 +19,7 @@ class BaseController
 	const API_ATT = '?format=json&appid=';
 
 	/**
-	 * Create instances of Guzzle
+	 * Create instances of Guzzle and DotEnv
      * Load Environment
 	 */
 	public function __construct(GuzzleClient $client = null, Dotenv $dotenv = null)
@@ -37,7 +39,7 @@ class BaseController
 	 * 
 	 * @return Illuminate\Support\Collection
 	 */
-	private function makeCollection($places, $model)
+	protected function makeCollection($places, $model)
 	{
 		$class = 'Wishi\Model\\' . ucwords($model);
 
@@ -51,10 +53,12 @@ class BaseController
 	 *
 	 * @return Guzzle response
 	 */
-	private function getter ($string)
+	protected function getter ($string)
 	{
 		try {
-			return $this->client->request('GET', self::API_URL . $string . self::API_ATT . getenv('YAHOO_CLIENT_ID'));
+			return $this->client->request('GET', 
+				self::API_URL . $string . self::API_ATT . getenv('YAHOO_CLIENT_ID')
+			);
 		} catch (Exception $e) {
 			throw RequestException::create($e->getCode());
 		}
@@ -65,7 +69,7 @@ class BaseController
 	 *
 	 * @return json
 	 */
-	private function respondJSON($res)
+	protected function respondJSON($res)
 	{
 		return json_decode( $res->getBody(), true );
 	}
