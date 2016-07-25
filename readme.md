@@ -1,5 +1,8 @@
 # Locator
 ---
+[![Coverage Status](https://coveralls.io/repos/github/andela-tolotin/get-country-info/badge.svg?branch=develop)](https://coveralls.io/github/andela-tolotin/get-country-info?branch=develop)
+[![Build Status](https://travis-ci.org/andela-tolotin/locator.svg?branch=develop)](https://travis-ci.org/andela-tolotin/locator)
+[![StyleCI](https://styleci.io/repos/60624109/shield)](https://styleci.io/repos/60624109)  
 If you have ever needed basic information about countries, and their states, then Locator is for you. Locator is a PHP package that works with the Yahoo API. It returns data that you need just by calling one method. There is a Service Provider and a Facade to make it easy to integrate with your Laravel project. It can also be used with other PHP frameworks like Lumen, CakePHP, Zend, etc. Version 1.0.0 only provides information about the following:
 * Countries
 * States in the country 
