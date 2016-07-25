@@ -16,7 +16,7 @@ If you have ever needed basic information about countries, and their states, the
 
 To use this package with a PHP project, first require the package using composer.
 ```PHP
-composer require claz/locator
+composer require claz/wishi
 ```
 
 * Note that you must be registered in Yahoo as a developer. Add your Yahoo details to your environment variables.
