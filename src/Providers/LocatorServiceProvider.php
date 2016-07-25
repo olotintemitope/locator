@@ -3,15 +3,16 @@
 namespace Wishi\Providers;
 
 use Dotenv\Dotenv as Dotenv;
-use Wishi\Controllers\Locator;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\ServiceProvider;
+use Wishi\Controllers\Locator;
 
 class LocatorServiceProvider extends ServiceProvider
 {
     /**
-     * [$defer description]
-     * @var boolean
+     * [$defer description].
+     *
+     * @var bool
      */
     protected $defer = false;
 
@@ -19,17 +20,17 @@ class LocatorServiceProvider extends ServiceProvider
      * Register application service here.
      *
      * @param void
+     *
      * @return Locator
      */
     public function register()
     {
         $this->app->singleton('locator', function ($app) {
-            $client = new GuzzleClient;
-            $dotenv = new Dotenv(__DIR__ . '/../../../../../');
-           
-           return new Locator($client, $dotenv);
+            $client = new GuzzleClient();
+            $dotenv = new Dotenv(__DIR__.'/../../../../../');
 
-       });
+            return new Locator($client, $dotenv);
+        });
     }
 
     /**

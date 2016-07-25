@@ -22,7 +22,8 @@ class RequestException extends Exception
                 break;
         }
 
-        $message = ' Wishi Exception: '.$meaning. ', please try again!';
+        $message = ' Wishi Exception: '.$meaning.', please try again!';
+
         return new static($message);
     }
 }

@@ -1,5 +1,8 @@
 # Locator
 ---
+[![Coverage Status](https://coveralls.io/repos/github/andela-tolotin/get-country-info/badge.svg?branch=develop)](https://coveralls.io/github/andela-tolotin/get-country-info?branch=develop)
+[![Build Status](https://travis-ci.org/andela-tolotin/locator.svg?branch=develop)](https://travis-ci.org/andela-tolotin/locator)
+[![StyleCI](https://styleci.io/repos/60624109/shield)](https://styleci.io/repos/60624109)  
 If you have ever needed basic information about countries, and their states, then Locator is for you. Locator is a PHP package that works with the Yahoo API. It returns data that you need just by calling one method. There is a Service Provider and a Facade to make it easy to integrate with your Laravel project. It can also be used with other PHP frameworks like Lumen, CakePHP, Zend, etc. Version 1.0.0 only provides information about the following:
 * Countries
 * States in the country 
@@ -16,13 +19,12 @@ If you have ever needed basic information about countries, and their states, the
 
 To use this package with a PHP project, first require the package using composer.
 ```PHP
-composer require claz/locator
+composer require claz/wishi
 ```
 
 * Note that you must be registered in Yahoo as a developer. Add your Yahoo details to your environment variables.
 ```ENV
 YAHOO_CLIENT_ID=*********************************
-YAHOO_CLIENT_SECRET=********************************
 ```
 ### Using plain PHP
 If you are using this project with a plain PHP project, follow the following steps:
@@ -33,21 +35,17 @@ If you are using this project with a plain PHP project, follow the following ste
 require_once ('vendor/autoload.php')
 
 use Wishi\Controllers\Locator;
-use GuzzleHttp\Client as GuzzleClient;
-use Dotenv\Dotenv;
 ```
-* Instantiate the object and you are good to go.
+* Instantiate the Locator class and you are good to go.
 ```PHP
-$client = new Client;
-$dotenv = new Dotenv;
-$locator = new Locator($client, $dotenv);
+$locator = new Locator();
 ```
 ### Using with Laravel 
 If you are using this project with Laravel, follow the following steps:
 
 * Open app.config in config folder and,
 
-* Register the ServiceProvider inside `config.app.php`
+* Register the ServiceProvider inside `config.php`
 ```PHP
 Wishi\Providers\LocatorServiceProvider::class,
 ```
