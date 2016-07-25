@@ -1,3 +1,3 @@
 <?php
 
-define('APP_ROOT', dirname(realpath(__FILE__)) . '/');
+define('APP_ROOT', dirname(realpath(__FILE__)).'/');
