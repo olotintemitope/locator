@@ -6,18 +6,21 @@ class Location
 {
     /**
      * The id of the location.
+     *
      * @var int
      */
     public $id;
 
     /**
      * The name of the location.
+     *
      * @var string
      */
     public $name;
 
     /**
      * The uri of the location.
+     *
      * @var string
      */
     public $uri;
