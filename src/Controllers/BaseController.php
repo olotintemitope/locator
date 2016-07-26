@@ -2,8 +2,8 @@
 
 namespace Wishi\Controllers;
 
-use Dotenv\Dotenv;
 use Exception;
+use Dotenv\Dotenv;
 use GuzzleHttp\Client as GuzzleClient;
 use Wishi\Exceptions\RequestException;
 
@@ -26,7 +26,7 @@ class BaseController
     {
         $this->client = $client == null ? new GuzzleClient() : $client;
 
-        $dotenv = $dotenv == null ? new Dotenv(APP_ROOT) : $dotenv;
+        $dotenv = $dotenv == null ? new Dotenv($_SERVER['DOCUMENT_ROOT']) : $dotenv;
 
         $dotenv->load();
     }
@@ -36,7 +36,6 @@ class BaseController
      *
      * @param  An array containing information of each location.
      * @param  The name of the model class.
-     *
      * @return Illuminate\Support\Collection
      */
     protected function makeCollection($places, $model)
@@ -72,5 +71,20 @@ class BaseController
     protected function respondJSON($res)
     {
         return json_decode($res->getBody(), true);
+    }
+
+    /**
+     * Make request and return data
+     * 
+     * @param  data
+     * @param  $value
+     * @return json      
+     */
+    public function data($data, $value)
+    {
+        $data = $this->respondJSON($data);
+        $places = $data['places']['place'];
+
+        return $this->makeCollection($places, $value);
     }
 }
