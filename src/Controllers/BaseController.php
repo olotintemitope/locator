@@ -2,8 +2,8 @@
 
 namespace Wishi\Controllers;
 
-use Exception;
 use Dotenv\Dotenv;
+use Exception;
 use GuzzleHttp\Client as GuzzleClient;
 use Wishi\Exceptions\RequestException;
 
@@ -36,6 +36,7 @@ class BaseController
      *
      * @param  An array containing information of each location.
      * @param  The name of the model class.
+     * 
      * @return Illuminate\Support\Collection
      */
     protected function makeCollection($places, $model)
@@ -78,6 +79,7 @@ class BaseController
      * 
      * @param  data
      * @param  $value
+     * 
      * @return json      
      */
     public function data($data, $value)

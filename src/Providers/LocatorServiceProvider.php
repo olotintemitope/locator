@@ -20,6 +20,7 @@ class LocatorServiceProvider extends ServiceProvider
      * Register application service here.
      *
      * @param void
+     * 
      * @return Locator
      */
     public function register()
@@ -30,10 +31,12 @@ class LocatorServiceProvider extends ServiceProvider
             return new Locator($client, $dotenv);
         });
     }
+    
     /**
      * Get the services provided by the provider.
      *
      * @param void
+     * 
      * @return array
      */
     public function provides()
