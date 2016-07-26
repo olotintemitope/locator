@@ -8,7 +8,7 @@
         "php": ">=5.5.9",
         "vlucas/phpdotenv": "~2.2",
         "guzzlehttp/guzzle": "^6.2",
-        "illuminate/support": "^5.2"
+        "illuminate/support/collection": "^5.2"
     },
     "minimum-stability": "dev",
     "require-dev": {
