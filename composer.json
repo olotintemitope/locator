@@ -19,7 +19,10 @@
     "autoload": {
         "psr-4": {
             "Wishi\\": "src/"
-        }
+        },
+        "files": [
+            "config.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [
