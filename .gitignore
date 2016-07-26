@@ -1,3 +1,6 @@
 /vendor
+/build
 .env
 hihi.txt
+.phpintel
+index.php
