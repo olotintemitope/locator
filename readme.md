@@ -96,7 +96,7 @@ One very common use is illustrated below in a Laravel project that lists all the
 <ul>
 @foreach(Locator::getStates('Nigeria') as $state)
     <li> {{ $state->name }} </li>
-@endforeah
+@endforeach
 </ul>
 ```
 
