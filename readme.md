@@ -51,7 +51,7 @@ Wishi\Providers\LocatorServiceProvider::class,
 ```
 * To use the Facade, simple add it to the same file.
 ```PHP
-Locator => Wishi\Facades\Locator::class,
+'Locator' => Wishi\Facades\Locator::class,
 ```
 * Import the Facade into your project.
 ```PHP
