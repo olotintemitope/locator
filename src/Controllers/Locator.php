@@ -2,10 +2,6 @@
 
 namespace Wishi\Controllers;
 
-use Wishi\Model\Country;
-use Wishi\Model\County;
-use Wishi\Model\State;
-
 class Locator extends BaseController
 {
     /**
@@ -17,7 +13,7 @@ class Locator extends BaseController
      */
     public function getCountries()
     {
-        $data = $this->respondJSON($this->getter('countries'));
+        $data = $this->toJson($this->getter('countries'));
         $places = $data['places']['place'];
 
         return $this->makeCollection($places, 'country');
@@ -32,7 +28,7 @@ class Locator extends BaseController
      */
     public function getStates($countryName)
     {
-        $data = $this->respondJSON($this->getter('states/'.$countryName));
+        $data = $this->toJson($this->getter('states/' . $countryName));
         $places = $data['places']['place'];
 
         return $this->makeCollection($places, 'state');
@@ -47,7 +43,7 @@ class Locator extends BaseController
      */
     public function getCounties($stateName)
     {
-        $data = $this->respondJSON($this->getter('counties/'.$stateName));
+        $data = $this->toJson($this->getter('counties/' . $stateName));
         $places = $data['places']['place'];
 
         return $this->makeCollection($places, 'county');

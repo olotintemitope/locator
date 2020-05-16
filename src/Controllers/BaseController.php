@@ -41,7 +41,7 @@ class BaseController
      */
     protected function makeCollection($places, $model)
     {
-        $class = 'Wishi\Model\\'.ucwords($model);
+        $class = 'Wishi\Model\\' . ucwords($model);
 
         return collect(array_map(function ($place) use ($class) {
             return new $class($place);
@@ -57,7 +57,7 @@ class BaseController
     {
         try {
             return $this->client->request('GET',
-                self::API_URL.$string.self::API_ATT.getenv('YAHOO_CLIENT_ID')
+                self::API_URL . $string . self::API_ATT . getenv('YAHOO_CLIENT_ID')
             );
         } catch (Exception $e) {
             throw RequestException::create($e->getCode());
@@ -69,7 +69,7 @@ class BaseController
      *
      * @return json
      */
-    protected function respondJSON($res)
+    protected function toJson($res)
     {
         return json_decode($res->getBody(), true);
     }
